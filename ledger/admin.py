@@ -11,7 +11,7 @@ class RecipeIngredientInLine(admin.TabularInline):
     
 class RecipeAdmin(admin.ModelAdmin):
     model = Recipe
-    inline = [RecipeIngredientInLine]
+    inlines = [RecipeIngredientInLine]
     
 
 class IngredientAdmin(admin.ModelAdmin):
@@ -24,7 +24,7 @@ class ProfileInLine(admin.StackedInline):
         
 
 class UserAdmin(BaseUserAdmin):
-    inline = [ProfileInLine]
+    inlines = [ProfileInLine]
 
 
 admin.site.register(Recipe, RecipeAdmin)

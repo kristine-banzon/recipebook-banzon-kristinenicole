@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %} Password Reset Complete {% endblock title %}
+{% block title %} Login {% endblock title %}
 {% block content %}
-    <h2>Password Reset Complete!</h2>
+    <h1>Login</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+    <br>
+    <a href="{% url 'password_reset' %}">Forgot Password</a>
 {% endblock content %}
